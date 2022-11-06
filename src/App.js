@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Route } from "wouter";
+import Home from "./pages/Home/Home";
+import UserPage from "./pages/UserPage/UserPage";
+import { ToastContextProvider } from "./context/ToastContext";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ToastContextProvider>
+      <Route path="/" component={Home} />
+      <Route path="/:id" component={UserPage} />
+    </ToastContextProvider>
   );
-}
+};
 
 export default App;
+
+// import React from "react";
+// import "./App.css";
+// import { Route } from "wouter";
+// import Dishes from "./pages/Dishes/Dishes";
+// import Categories from "./pages/Categories/Categories";
+// import Header from "./components/Header/Header";
+// import { DishesContextProvider } from "./context/DishesContext";
+// import { CategoriesContextProvider } from "./context/CategoriesContext";
+
+// const App = () => {
+//   return (
+//     <CategoriesContextProvider>
+//       <DishesContextProvider>
+//         <Header />
+//         <Route path="/" component={Dishes} />
+//         <Route path="/categories" component={Categories} />
+//       </DishesContextProvider>
+//     </CategoriesContextProvider>
+//   );
+// };
+
+// export default App;

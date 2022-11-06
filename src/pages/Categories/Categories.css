@@ -1,0 +1,29 @@
+.mainCategories {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 50px;
+}
+
+.containerCategories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  background-color: burlywood;
+  border-radius: 8px;
+  font-size: 32px;
+  color: #fff;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  width: 250px;
+  height: 250px;
+}
